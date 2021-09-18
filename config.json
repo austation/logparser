@@ -1,0 +1,21 @@
+{
+	"serverDirectory": "C:\\Path\\To\\Server\\Configuration\\GameStaticFiles",
+	"outputDirectory": "C:\\path\\to\\output\\webserver\\server_name",
+	"apiUrl": "https://api.example.com/api/status",
+	"configFiles": [
+						"config\\config.txt",
+						"config\\game_options.txt",
+						"config\\maps.txt",
+						"config\\shuttles_unbuyable.txt",
+						"config\\shuttles_illegal.txt",
+						"config\\lavaruinblacklist.txt",
+						"config\\spaceruinblacklist.txt",
+						"config\\awaymissionconfig.txt",
+						"config\\admins.txt",
+						"config\\admin_ranks.txt"
+					],
+	"logBlacklist": [
+						"sql.log"
+	],
+	"configDirectories": ["data\\npc_saves"]
+}

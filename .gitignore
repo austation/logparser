@@ -1,0 +1,9 @@
+# built classes
+target/*
+# built jar
+logparser.jar
+# vscode client config
+.vscode/settings.json
+# various clientside configuration
+.settings/*
+.classpath
