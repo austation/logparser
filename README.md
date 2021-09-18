@@ -10,9 +10,9 @@ Content-Type: application/json
 ```
 ```json
 {
-	response: "Got status successfully",
-	data: {
-		round_id: 4925
+	"response": "Got status successfully",
+	"data": {
+		"round_id": 4925
 	}
 }
 ```
