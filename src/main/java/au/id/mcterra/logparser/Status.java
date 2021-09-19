@@ -1,4 +1,4 @@
-package au.id.mcterra;
+package au.id.mcterra.logparser;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

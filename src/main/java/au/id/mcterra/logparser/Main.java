@@ -1,4 +1,4 @@
-package au.id.mcterra;
+package au.id.mcterra.logparser;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

@@ -1,4 +1,4 @@
-package au.id.mcterra;
+package au.id.mcterra.logparser;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
