@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build JAR
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -19,3 +20,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: logparser-jar
+        path: target/logparser*.jar
