@@ -1,9 +1,11 @@
 # built classes
 target/*
 # built jar
-logparser.jar
+logparser*.jar
 # vscode client config
 .vscode/settings.json
 # various clientside configuration
 .settings/*
 .classpath
+# maven build
+dependency-reduced-pom.xml

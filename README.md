@@ -21,3 +21,6 @@ Content-Type: application/json
 How this API is set up is your decision, but it should probably interface with some topic endpoint in `world_topic.dm` of your codebase.
 
 **IF YOU USE LINUX AS YOUR HOSTING PLATFORM**, make sure to change the double backslashes in config.json to be forward slashes. No changes to the code itself are required, as I was careful to ensure it was platform-independant.
+
+# Build
+Just run `mvn package`, JAR is outputted to the target folder. Or use one of the pre-built versions in the releases page (Built with JDK 17).
