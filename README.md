@@ -3,6 +3,8 @@ This is a log parser for SS13 servers, written in Java by MCterra. It is intende
 
 Also the code is still kind of messy and needs some cleanup. Namely I need to move the config copier into another file visitor instead of it being a snowflake wrapper class.
 
+I have also included a template `web.config` file for an IIS server, to handle URL rewrites for serving the gzip-encoded files. Make sure you serve this on a dedicated subdomain to avoid it interfering with other files. If you use nginx or apache, you're on your own; you'll need to consult their relevant documentation. In addition, if using IIS, make sure to add server variables `ORIGINAL_CONTENT_TYPE`, `RESPONSE_CONTENT_TYPE` and `RESPONSE_CONTENT_ENCODING` via your control panel in the URL Rewrite panel -> View Server Variables.
+
 This parser requires an API interface for the target server's `status` topic to function. The response to the request should look like this at minimum:
 ```
 HTTP 200
