@@ -10,6 +10,6 @@ public class Status {
 		JSONParser parser = new JSONParser();
 		Object result = parser.parse(text);
 		JSONObject json = (JSONObject)result;
-		roundId = (String)((JSONObject)json.get("data")).get("round_id");
+		roundId = (String)json.get("round_id");
 	}
 }

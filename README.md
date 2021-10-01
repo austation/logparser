@@ -12,10 +12,7 @@ Content-Type: application/json
 ```
 ```json
 {
-	"response": "Got status successfully",
-	"data": {
-		"round_id": 4925
-	}
+	"round_id": 4925
 }
 ```
 How this API is set up is your decision, but it should probably interface with some topic endpoint in `world_topic.dm` of your codebase.
