@@ -19,14 +19,14 @@ public class LogFileVisitor implements FileVisitor<Path> {
 	public static final String TIMESTAMP_REGEX = "(\\[\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}\\.\\d{3}\\])";
 	public final Path inputPath;
 	public final Path outputPath;
-	public final String roundId;
+	public final int roundId;
 	public final String[] logBlacklist;
 	// Current round zip file for output
 	private ZipOutputStream currentZip = null;
 	// Persistent variable used to get relative paths for zip output
 	private Path currentRound = null;
 
-	public LogFileVisitor(Path inputPath, Path outputPath, String roundId, String[] logBlacklist) {
+	public LogFileVisitor(Path inputPath, Path outputPath, int roundId, String[] logBlacklist) {
 		this.inputPath = inputPath;
 		this.outputPath = outputPath;
 		this.roundId = roundId;
