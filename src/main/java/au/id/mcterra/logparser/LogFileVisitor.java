@@ -153,6 +153,7 @@ public class LogFileVisitor implements FileVisitor<Path> {
 					"$1 [CENSORED: ASAY/AHELP/NOTE/BAN]");
 			working = working.replaceFirst(TIMESTAMP_REGEX + "\\s?MENTOR:.*$", "$1 [CENSORED: MSAY/MHELP]");
 			working = working.replaceFirst(TIMESTAMP_REGEX + "\\s?SQL:.*$", "$1 [CENSORED: SQL]");
+			working = working.replaceFirst(TIMESTAMP_REGEX + "\\s?TOPIC:.*$", "$1 [CENSORED: TOPIC]");
 			working = working.replaceFirst("(\\s-\\sUser\\sAgent:)\\s.+", "$1 [CENSORED: USER-AGENT]");
 			lines[i] = working;
 		}
