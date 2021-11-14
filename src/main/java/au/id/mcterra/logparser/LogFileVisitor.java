@@ -147,10 +147,8 @@ public class LogFileVisitor implements FileVisitor<Path> {
 		// each type of censoring
 		for (int i = 0; i < lines.length; i++) {
 			String working = lines[i]; // avoid unneeded array access
-			working = working.replaceAll("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}(?:-\\d{10})?",
-					"[CENSORED: IP/CID]");
-			working = working.replaceFirst(TIMESTAMP_REGEX + "\\s?ADMINPRIVATE:.*$",
-					"$1 [CENSORED: ASAY/AHELP/NOTE/BAN]");
+			working = working.replaceAll("(?:\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})|(?:\\d{9,10})", "[CENSORED: IP/CID]");
+			working = working.replaceFirst(TIMESTAMP_REGEX + "\\s?ADMINPRIVATE:.*$", "$1 [CENSORED: ASAY/AHELP/NOTE/BAN]");
 			working = working.replaceFirst(TIMESTAMP_REGEX + "\\s?MENTOR:.*$", "$1 [CENSORED: MSAY/MHELP]");
 			working = working.replaceFirst(TIMESTAMP_REGEX + "\\s?SQL:.*$", "$1 [CENSORED: SQL]");
 			working = working.replaceFirst(TIMESTAMP_REGEX + "\\s?TOPIC:.*$", "$1 [CENSORED: TOPIC]");
