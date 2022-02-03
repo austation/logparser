@@ -1,4 +1,4 @@
-# Log Parser
+# Log Parser [![Java CI with Maven](https://github.com/austation/logparser/actions/workflows/ci.yml/badge.svg)](https://github.com/austation/logparser/actions/workflows/ci.yml)
 This is a log parser for SS13 servers, written in Java by MCterra. It is intended to replace the PHP version used by /tg/station, which is very janky and requires linux to work.
 
 Also the code is still kind of messy and needs some cleanup. Namely I need to move the config copier into another file visitor instead of it being a snowflake wrapper class.
