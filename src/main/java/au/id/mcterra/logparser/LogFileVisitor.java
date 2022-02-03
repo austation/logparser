@@ -114,7 +114,7 @@ public class LogFileVisitor implements FileVisitor<Path> {
 			String zipPath = currentRound.relativize(file).toString();
 			ZipEntry entry = new ZipEntry(zipPath);
 			currentZip.putNextEntry(entry);
-			byte[] fileBytes = Files.readAllBytes(file);
+			byte[] fileBytes = Files.readAllBytes(target);
 			currentZip.write(fileBytes, 0, fileBytes.length);
 			currentZip.closeEntry();
 		}
