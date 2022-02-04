@@ -83,6 +83,7 @@ public class LogFileVisitor implements FileVisitor<Path> {
 			extension = name.substring(i + 1);
 		}
 		// Only copy known extensions
+		byte[] fileContents;
 		try {
 			switch (extension) {
 				case "log":
@@ -92,10 +93,11 @@ public class LogFileVisitor implements FileVisitor<Path> {
 					String fileString = "";
 					fileString = Files.readString(file);
 					fileString = filterString(fileString);
-					compress(fileString.getBytes(), target);
+					fileContents = fileString.getBytes();
+					compress(fileContents, target);
 					break;
 				case "png":
-					byte[] fileContents = Files.readAllBytes(file);
+					fileContents = Files.readAllBytes(file);
 					compress(fileContents, target);
 					break;
 				default:
@@ -114,8 +116,7 @@ public class LogFileVisitor implements FileVisitor<Path> {
 			String zipPath = currentRound.relativize(file).toString();
 			ZipEntry entry = new ZipEntry(zipPath);
 			currentZip.putNextEntry(entry);
-			byte[] fileBytes = Files.readAllBytes(target);
-			currentZip.write(fileBytes, 0, fileBytes.length);
+			currentZip.write(fileContents, 0, fileContents.length);
 			currentZip.closeEntry();
 		}
 		return FileVisitResult.CONTINUE;
@@ -160,8 +161,6 @@ public class LogFileVisitor implements FileVisitor<Path> {
 
 	// Basically just copy but it does a gz compression
 	private void compress(byte[] bytes, Path target) throws IOException {
-		// Need to take a string of the path and add the .gz extension
-		target = Path.of(target.toString() + ".gz");
 		GZIPOutputStream gzipStream = new GZIPOutputStream(Files.newOutputStream(target));
 		gzipStream.write(bytes);
 		gzipStream.close();
