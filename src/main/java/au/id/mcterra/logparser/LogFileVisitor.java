@@ -69,7 +69,7 @@ public class LogFileVisitor implements FileVisitor<Path> {
 
 	@Override
 	public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-		Path target = outputPath.resolve(Path.of(inputPath.relativize(file).toString()));
+		Path target = Path.of(outputPath.resolve(Path.of(inputPath.relativize(file).toString())).toString() + ".gz");
 		if (target.toFile().exists()) {
 			return FileVisitResult.CONTINUE;
 		}
